@@ -1,0 +1,8 @@
+2026-03-16 11:03:41,782 - INFO - Starting CAN log analyzer
+2026-03-16 11:03:41,787 - INFO - DBC loaded
+2026-03-16 11:03:41,788 - INFO - 3 frames parsed
+2026-03-16 11:03:41,788 - INFO - Decoding frame ID 0x100
+2026-03-16 11:03:41,788 - INFO - Decoding frame ID 0x100
+2026-03-16 11:03:41,788 - INFO - Decoding frame ID 0x100
+2026-03-16 11:03:41,789 - ERROR - ['Speed above max: 1000.0', 'Temperature above max: 144']
+2026-03-16 11:03:41,816 - INFO - XML report generated

@@ -1,0 +1,1 @@
+<TestReport><Signals><Frame><Speed>50.0</Speed><Temperature>80</Temperature></Frame><Frame><Speed>102.30000000000001</Speed><Temperature>96</Temperature></Frame><Frame><Speed>1000.0</Speed><Temperature>144</Temperature></Frame></Signals><Errors><Error>Speed above max: 1000.0</Error><Error>Temperature above max: 144</Error></Errors></TestReport>
