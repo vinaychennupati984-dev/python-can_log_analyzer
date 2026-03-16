@@ -7,13 +7,16 @@ def load_dbc(dbc_file):
     return db
 
 
-def decode_frame(db, can_id, data):
+def decode_frame(db, frame_id, data):
 
     try:
-        decoded = db.decode_message(can_id, data)
+
+        message = db.get_message_by_frame_id(frame_id)
+
+        decoded = message.decode(data)
 
         return decoded
 
-    except:
+    except Exception:
 
         return {}

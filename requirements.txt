@@ -1,0 +1,6 @@
+cantools
+python-can
+pyyaml
+pytest
+
+pip install -r requirements.txt

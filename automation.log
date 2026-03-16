@@ -1,8 +1,8 @@
-2026-03-16 11:03:41,782 - INFO - Starting CAN log analyzer
-2026-03-16 11:03:41,787 - INFO - DBC loaded
-2026-03-16 11:03:41,788 - INFO - 3 frames parsed
-2026-03-16 11:03:41,788 - INFO - Decoding frame ID 0x100
-2026-03-16 11:03:41,788 - INFO - Decoding frame ID 0x100
-2026-03-16 11:03:41,788 - INFO - Decoding frame ID 0x100
-2026-03-16 11:03:41,789 - ERROR - ['Speed above max: 1000.0', 'Temperature above max: 144']
-2026-03-16 11:03:41,816 - INFO - XML report generated
+2026-03-16 13:46:24,266 - INFO - Starting CAN Log Analyzer
+2026-03-16 13:46:24,271 - INFO - DBC file loaded
+2026-03-16 13:46:24,272 - INFO - 3 CAN frames parsed
+2026-03-16 13:46:24,273 - INFO - Signal: Temperature | Value: 80 | Status: PASS
+2026-03-16 13:46:24,273 - INFO - Signal: Temperature | Value: 96 | Status: PASS
+2026-03-16 13:46:24,274 - INFO - Signal: Temperature | Value: 144 | Status: FAIL
+2026-03-16 13:46:24,278 - INFO - XML report generated successfully
+2026-03-16 13:46:24,279 - INFO - CAN Log Analysis Completed

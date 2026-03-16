@@ -1,0 +1,15 @@
+dbc_file: vehicle.dbc
+log_file: sample_log.txt
+
+signals:
+  VehicleSpeed:
+    min: 0
+    max: 120
+
+  EngineRPM:
+    min: 0
+    max: 6000
+
+  FuelLevel:
+    min: 0
+    max: 100

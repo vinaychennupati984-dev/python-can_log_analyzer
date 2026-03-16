@@ -2,15 +2,18 @@ def parse_can_log(file_path):
     
     frames = []
 
-    with open(file_path) as f:
+    with open(file_path, "r") as f:
+
         for line in f:
 
             parts = line.strip().split()
 
-            can_id = int(parts[0], 16)
+            if len(parts) < 3:
+                continue
 
-            data = bytes(int(x, 16) for x in parts[2:])
+            frame_id = int(parts[1], 16)
+            data = bytes.fromhex(parts[2])
 
-            frames.append((can_id, data))
+            frames.append((frame_id, data))
 
     return frames

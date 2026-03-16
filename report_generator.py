@@ -1,29 +1,27 @@
 import xml.etree.ElementTree as ET
 
-
-def generate_xml_report(decoded_frames, errors):
+def generate_xml_report(results):
 
     root = ET.Element("TestReport")
 
-    signals_node = ET.SubElement(root, "Signals")
+    total = len(results)
+    passed = sum(1 for r in results if r["status"] == "PASS")
+    failed = total - passed
 
-    for frame in decoded_frames:
+    summary = ET.SubElement(root, "Summary")
 
-        frame_node = ET.SubElement(signals_node, "Frame")
+    ET.SubElement(summary, "TotalSignals").text = str(total)
+    ET.SubElement(summary, "Passed").text = str(passed)
+    ET.SubElement(summary, "Failed").text = str(failed)
 
-        for signal, value in frame.items():
+    for item in results:
 
-            sig = ET.SubElement(frame_node, signal)
+        testcase = ET.SubElement(root, "TestCase")
 
-            sig.text = str(value)
-
-    errors_node = ET.SubElement(root, "Errors")
-
-    for err in errors:
-
-        e = ET.SubElement(errors_node, "Error")
-
-        e.text = err
+        ET.SubElement(testcase, "FrameID").text = str(item["frame_id"])
+        ET.SubElement(testcase, "Signal").text = item["signal"]
+        ET.SubElement(testcase, "Value").text = str(item["value"])
+        ET.SubElement(testcase, "Result").text = item["status"]
 
     tree = ET.ElementTree(root)
 

@@ -1,34 +1,20 @@
-def build_validation_rules(db):
-    
-    rules = {}
-
-    for message in db.messages:
-
-        for signal in message.signals:
-
-            rules[signal.name] = {
-                "min": signal.minimum,
-                "max": signal.maximum
-            }
-
-    return rules
-
-
 def validate_signals(signals, rules):
-
-    errors = []
+    
+    results = {}
 
     for signal, value in signals.items():
 
-        if signal in rules:
+        rule = rules.get(signal)
 
-            min_val = rules[signal]["min"]
-            max_val = rules[signal]["max"]
+        if not rule:
+            continue
 
-            if min_val is not None and value < min_val:
-                errors.append(f"{signal} below min: {value}")
+        min_v = rule.get("min")
+        max_v = rule.get("max")
 
-            if max_val is not None and value > max_val:
-                errors.append(f"{signal} above max: {value}")
+        if min_v <= value <= max_v:
+            results[signal] = "PASS"
+        else:
+            results[signal] = "FAIL"
 
-    return errors
+    return results
