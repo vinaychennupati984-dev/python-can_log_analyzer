@@ -12,6 +12,9 @@ Python automation tool for analyzing CAN logs and validating ECU signals.
 - logging
 - unit testing using pytest
 
+## Use Case
+Used for automated ECU validation and signal verification, reducing manual log analysis effort.
+
 ## Architecture
 
            +--------------+
