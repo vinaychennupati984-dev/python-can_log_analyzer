@@ -67,6 +67,7 @@ def main():
 
     print("XML report generated: report.xml")
     print("Execution completed successfully")
+    print("Added jenkins webhook")
 
     logger.info("Execution completed")
 
